@@ -21,4 +21,10 @@ public class ReviewBO {
 	public int addReview(Review review) {
 		return reviewMapper.insertReview(review);
 	}
+	
+	public int addReviewAsField(int storeId44444, String menu,
+			String userName, Double point, String review) {
+		
+		return reviewMapper.insertReviewAsField(storeId44444, menu, userName, point, review);
+	}
 }
