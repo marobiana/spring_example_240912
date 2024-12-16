@@ -27,4 +27,23 @@ public class ReviewBO {
 		
 		return reviewMapper.insertReviewAsField(storeId44444, menu, userName, point, review);
 	}
+	
+	// i: id, review
+	// o: int
+	public int updateReviewById(int id, String review) {
+		return reviewMapper.updateReviewById(id, review);
+	}
+	
+	// i: id
+	// o: void
+	public void deleteReviewById(int id) {
+		int row = reviewMapper.deleteReviewById(id);
+	}
 }
+
+
+
+
+
+
+
