@@ -1,5 +1,6 @@
 package com.example.lesson06;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,9 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.lesson04.bo.UserBO;
+
 @RequestMapping("/lesson06/ex01")
 @Controller
 public class Lesson06Ex01Controller {
+	
+	@Autowired
+	private UserBO userBO;
 
 	// 회원가입 화면
 	@GetMapping("/add-user-view")
@@ -28,10 +34,15 @@ public class Lesson06Ex01Controller {
 			@RequestParam(value = "introduce", required = false) String introduce) {
 		
 		// db insert
+		userBO.addUser(name, yyyymmdd, email, introduce);
 		
 		// 응답
 		return "성공";
 	}
 	
 	// 완료 화면
+	@GetMapping("/after-add-user-view")
+	public String afterAddUserView() {
+		return "lesson06/lesson06AfterAddUser";
+	}
 }

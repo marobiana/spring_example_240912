@@ -103,10 +103,10 @@
 					
 					// response - callback 함수
 					, success:function(data) { // data 파라미터: 응답값(String)
-						alert(data);
-						/*if (data == "성공") {
+						//alert(data);
+						if (data == "성공") {
 							location.href = "/lesson06/ex01/after-add-user-view"; // GET 요청 - 가입완료 화면
-						}*/
+						}
 					}
 					, error:function(xhr, status, error) {
 						alert("회원가입에 실패했습니다.");
